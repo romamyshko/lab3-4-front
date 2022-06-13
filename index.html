@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Teachinder</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="header_title">
+          <h1>Teachinder</h1>
+        </div>
+        <div class="header_search">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Name, note or age to search"
+          />
+          <button id="btn_search">Search</button>
+        </div>
+        <nav class="header_nav">
+          <ul>
+            <li><a href="#">Teachers</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="header_add_teacher">
+          <button id="myBtn11">Add teacher</button>
+        </div>
+      </header>
+      <!-- Top Teachers -->
+      <section class="teacher_rating">
+        <h1 class="teacher_rating-title section-title">Top Teachers</h1>
+        <!-- Form -->
+        <form class="form">
+          <div class="age_option option">
+            <label for="age">Age:</label>
+            <select name="age" id="ageUser">
+              <option value="" selected disabled hidden>18-31</option>
+              <option value="18">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="70">70</option>
+              <option value="90">90</option>
+            </select>
+          </div>
+          <div class="dashed"></div>
+          <div class="region_option option">
+            <label for="region">Region:</label>
+            <select name="region" id="region">
+              <option value="" selected disabled hidden>Europe</option>
+              <option value="Australia">Australia</option>
+              <option value="United States">United States</option>
+              <option value="Paris">Paris</option>
+              <option value="Iran">Iran</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Norway">Norway</option>
+              <option value="Spain">Spain</option>
+              <option value="Germany">Germany</option>
+            </select>
+          </div>
+          <div class="dashed"></div>
+          <div class="sex_option option">
+            <label for="sex">Sex:</label>
+            <select name="sex" id="sex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="dashed"></div>
+          <div>
+            <input type="checkbox" name="sports" id="photo" />
+            <label for="photo">Only with photo</label>
+          </div>
+          <div class="dashed"></div>
+          <div>
+            <input type="checkbox" name="favorites" id="favorites" />
+            <label for="favorites">Only favorites</label>
+          </div>
+        </form>
+        <!-- Top Teachers -->
+        <div class="teacher_container" id="teachers">
+          <!-- RENDER TEACHERS -->
+        </div>
+        <div class="teacher_container_created" id="teachers_created">
+          <!-- RENDER TEACHERS THAT WERE CREATED-->
+        </div>
+      </section>
+      <!-- Statistics -->
+      <section class="statistics">
+        <h1 class="section-title">Statistics</h1>
+
+        <table class="customers" id="myTable2">
+          <tr>
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Speciality</th>
+            <th onclick="sortTable(2)">Age</th>
+            <th onclick="sortTable(3)">Gender</th>
+            <th onclick="sortTable(4)">Nationality</th>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Chemistry</td>
+            <td>28</td>
+            <td>Female</td>
+            <td>USA</td>
+          </tr>
+          <tr>
+            <td>Berglunds snabbköp</td>
+            <td>Chemistry</td>
+            <td>26</td>
+            <td>Female</td>
+            <td>Ireland</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Chess</td>
+            <td>41</td>
+            <td>Female</td>
+            <td>England</td>
+          </tr>
+          <tr>
+            <td>Ernst Handel</td>
+            <td>Math</td>
+            <td>32</td>
+            <td>Male</td>
+            <td>Austria</td>
+          </tr>
+          <tr>
+            <td>Island Trading</td>
+            <td>Computer Science</td>
+            <td>37</td>
+            <td>Male</td>
+            <td>Italy</td>
+          </tr>
+          <tr>
+            <td>Königlich Essen</td>
+            <td>English</td>
+            <td>43</td>
+            <td>Male</td>
+            <td>USA</td>
+          </tr>
+          <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Chess</td>
+            <td>34</td>
+            <td>Female</td>
+            <td>Netherlands</td>
+          </tr>
+          <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Biology</td>
+            <td>38</td>
+            <td>Female</td>
+            <td>Scotland</td>
+          </tr>
+          <tr>
+            <td>North/South</td>
+            <td>Statistics</td>
+            <td>44</td>
+            <td>Male</td>
+            <td>France</td>
+          </tr>
+        </table>
+
+        <div class="pagination">
+          <span style="color: black">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span style="color: black">. . .</span>
+          <span>Last</span>
+        </div>
+      </section>
+      <!-- Favorites -->
+      <section class="favorites">
+        <h1 class="section-title">Favorites</h1>
+        <span class="left-arrow">&#x3c;</span>
+        <div class="favorites_container" id="favorites1"></div>
+        <span class="right-arrow">&#x3e;</span>
+      </section>
+      <div class="dashed-line"></div>
+      <div class="parahraph">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus
+          deserunt ut vero, consequuntur amet delectus unde? Commodi eveniet
+          animi iste laborum dolores a mollitia quas sunt blanditiis. Itaque,
+          saepe minus. Maxime expedita soluta minus. Corporis neque debitis
+          alias doloribus quaerat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+          excepturi ullam ex odio facere sed, ratione labore!
+        </p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt illum
+        fugit pariatur dolorem.
+      </div>
+      <div class="bottom_nav">
+        <nav class="header_nav">
+          <ul>
+            <li><a href="#">Teacher</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="header_add_teacher">
+          <button id="myBtn2">Add Teacher</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup-modal" class="modal">
+      <div class="modal-content">
+        <div class="header">
+          <span>Add Teacher</span>
+          <span class="close111">&times;</span>
+        </div>
+        <div class="modal-form">
+          <div>
+            <label for="fname">Name:</label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="Enter a name"
+            />
+          </div>
+          <div>
+            <label for="speciality">Speciality:</label>
+            <select name="speciality" id="speciality">
+              <option value="Mathematics">Mathematics</option>
+              <option value="Physics">Physics</option>
+              <option value="Chess">Chess</option>
+            </select>
+          </div>
+          <div class="row">
+            <div>
+              <label for="fcountry">Country:</label>
+              <select name="fcountry" id="fcountry">
+                <option value="Ukraine">Ukraine</option>
+                <option value="Poland">Poland</option>
+                <option value="Latvia">Latvia</option>
+              </select>
+            </div>
+            <div>
+              <label for="fcity">City:</label>
+              <input type="text" id="fcity" name="fcity" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="femail">Email:</label>
+              <input type="text" id="femail" name="femail" />
+            </div>
+            <div>
+              <label for="fphone">Phone:</label>
+              <input type="text" id="fphone" name="fphone" />
+            </div>
+          </div>
+          <div class="date_of_birth">
+            <label for="birthday">Date of birth:</label>
+            <input type="date" id="birthday" name="birthday" />
+          </div>
+          <div class="radio-buttons">
+            Sex:
+            <div>
+              Male:
+              <input type="radio" class="gender" name="gender" value="male" />
+              Female:
+              <input type="radio" class="gender" name="gender" value="female" />
+            </div>
+          </div>
+          <div class="bg-color-input">
+            <label for="head">Background color</label>
+            <input type="color" id="head" name="head" value="#e66465" />
+          </div>
+          <div>
+            <label for="story">Notes (optional)</label>
+            <textarea
+              spellcheck="true"
+              name="story"
+              rows="5"
+              cols="33"
+              id="myTextarea"
+            >
+            </textarea>
+          </div>
+          <div class="header_add_teacher modal-btn">
+            <button id="submitBtn">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="teacherM" class="teacher-modal"></div>
+    <script src="script-3.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
